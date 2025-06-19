@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+.color-picker-container {
+  margin: 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.dark-mode {
+  width: fit-content;
+}
+
+.colorContainer {
+  position: relative;
+  width: 150px;
+  margin: 1rem 0 0 0;
+}
+
+.colorInput {
+  width: 100%;
+  padding: 0;
+  width: 150px;
+  cursor: pointer;
+}
+
+*:focus {
+  outline: none;
+}
+
+::-webkit-color-swatch-wrapper,
+::-webkit-color-swatch,
+::-moz-color-swatch {
+  padding: 0;
+  border: none;
+  border-radius: 0.25rem;
+}
+
+.removeColor {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  cursor: pointer;
+  color: red;
+  background-color: white;
+  border: 1px solid red;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  padding: 0;
+}
+
+.output-container,
+.preview-container {
+  margin-top: 20px;
+}
+
+.output-container {
+  padding-bottom: 8rem;
+}
+
+.preview-area {
+  padding: 8px;
+  min-height: 50px;
+  font-size: 2rem;
+  background: url(../../images/minecraft.png) center bottom/cover no-repeat;
+  text-align: center;
+  overflow: auto;
+  font-family: "Press Start 2P", "Courier New", monospace !important;
+  line-height: 1.5;
+}
+
+#markdownOutput {
+  height: auto;
+  min-height: 50px;
+  overflow: none;
+}
+
+.footer__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer__content * {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.buttons {
+  margin: 0.5rem 0 0 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  align-items: center;
+}
+.buttons__button {
+  width: 100%;
+}/*# sourceMappingURL=style.css.map */

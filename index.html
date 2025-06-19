@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minecraft Gradient Generator</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.typekit.net/ffv1sgh.css" />
+  <link rel="stylesheet" href="./style/css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chroma-js@2.1.0/chroma.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js" defer></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" defer></script>
+  <script src="./scripts/buymecoffe.js" defer></script>
+  <script src="./scripts/script.js" defer></script>
+</head>
+
+<body class="position-absolute top-0 start-0 w-100 d-flex flex-column min-vh-100">
+  <div class="flex-grow-1">
+    <div class="container dark-mode position-absolute top-0 start-0 p-3">
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="darkModeToggle" />
+        <label class="form-check-label" for="darkModeToggle">Dark Mode</label>
+      </div>
+    </div>
+    <div class="container content-wrapper mt-4">
+<h1 class="mt-4 text-center">🎮 Minecraft Gradient Generator ⛏️</h1>
+      <hr />
+      <section>
+        <div class="row">
+          <div class="col-12">
+            <div class="form-group mt-4">
+              <input type="text" class="form-control" id="textInput" placeholder="Enter your Minecraft nickname"
+                aria-describedby="textInputHelp" />
+              <small id="textInputHelp">Input your Minecraft nickname for gradient generation.</small>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="row">
+          <div class="col-12 mb-3">
+            <div id="colorInputs" class="color-picker-container">
+            </div>
+            <button type="button" class="btn btn-secondary" id="addColor"> Add Color </button>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="row">
+          <div class="col-12">
+            <div>
+              <label class="form-label"><strong>Text Formatting:</strong></label>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="formatting" id="noneCheck" checked>
+                <label class="form-check-label" for="noneCheck">
+                  None
+                </label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="formatting" id="boldCheck">
+                <label class="form-check-label" for="boldCheck">
+                  <strong>&&l Bold</strong>
+                </label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="formatting" id="italicCheck">
+                <label class="form-check-label" for="italicCheck">
+                  <em>&&o Italic</em>
+                </label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="formatting" id="underlineCheck">
+                <label class="form-check-label" for="underlineCheck">
+                  <u>&&n Underline</u>
+                </label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="formatting" id="strikeCheck">
+                <label class="form-check-label" for="strikeCheck">
+                  <s>&&m Strikethrough</s>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="row">
+          <div class="col-12">
+            <div class="preview-container">
+              <div id="output" class="preview-area border border-1 rounded" aria-live="polite"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="row">
+          <div class="col-12">
+            <div class="output-container py-0 position-relative">
+              <div id="textAreaOutput" class="form-control text-break" aria-label="Minecraft Gradient Output"></div>
+              <div class="buttons">
+                <a id="copyButton" class="btn btn-secondary buttons__button" title="Copy to Clipboard">
+                  Copy Minecraft Code <i class="fas fa-copy"></i>
+                </a>
+                <a class="btn btn-primary buttons__button" href="https://moddedmc.net/" target="_blank">
+                  Play MMCN <i class="fas fa-gamepad"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+  <footer class="footer">
+    <hr />
+    <div class="container mb-3">
+      <div class="row">
+        <div class="col text-center footer__content">
+          <p class="flex justify-content-center align-items-center">Made with <i
+              class="fas fa-heart text-danger m-1"></i> by John for Minecraft Players</p>
+        </div>
+        <div class="col footer__content" class="social__icons">
+          <a class="me-3 text-reset" href="https://discord.gg/bantaverse" target="_blank">
+            <i class="fab fa-discord fa-2x"></i>
+          </a>
+          <a class="social__icons me-3 text-reset" href="https://github.com/hanaka15" target="_blank">
+            <i class="fab fa-github fa-2x"></i>
+          </a>
+          <buy-me-a-coffee username="hanaka"></buy-me-a-coffee>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

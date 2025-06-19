@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+$color-input-width: 150px;
+$color-picker-gap: 10px;
+$remove-color-size: 20px;
+$remove-color-position-offset: -10px;
+$min-height-output: 50px;
+$border-radius: .25rem;
+$font-size-remove-color: 14px;
+$animation-duration: 30s;
+
+.color-picker-container {
+    margin: 1rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: $color-picker-gap;
+    margin-bottom: $color-picker-gap;
+}
+
+.dark-mode {
+    width: fit-content;
+}
+
+.colorContainer {
+    position: relative;
+    width: $color-input-width;
+    margin: 1rem 0 0 0;
+}
+
+.colorInput {
+    width: 100%;
+    padding: 0;
+    width: $color-input-width;
+    cursor: pointer;
+}
+
+*:focus {
+    outline: none;
+}
+
+::-webkit-color-swatch-wrapper,
+::-webkit-color-swatch,
+::-moz-color-swatch {
+    padding: 0;
+    border: none;
+    border-radius: $border-radius;
+}
+
+.removeColor {
+    position: absolute;
+    top: $remove-color-position-offset;
+    right: $remove-color-position-offset;
+    cursor: pointer;
+    color: red;
+    background-color: white;
+    border: 1px solid red;
+    border-radius: 50%;
+    width: $remove-color-size;
+    height: $remove-color-size;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: $font-size-remove-color;
+    padding: 0;
+}
+
+.output-container,
+.preview-container {
+    margin-top: 20px;
+}
+
+.output-container {
+    padding-bottom: 8rem;
+}
+
+
+.preview-area {
+    padding: 8px;
+    min-height: $min-height-output;
+    font-size: 2rem;
+    background: url(../../images/minecraft.png) center bottom / cover no-repeat;
+    text-align: center;
+    overflow: auto;
+    font-family: 'Press Start 2P', 'Courier New', monospace !important;
+    line-height: 1.5;
+}
+
+#markdownOutput {
+    height: auto;
+    min-height: $min-height-output;
+    overflow: none;
+}
+
+.footer {
+    &__content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        * {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+    }
+}
+
+.buttons {
+    margin: .5rem 0 0 0;
+    display: flex;
+    justify-content: space-between;
+    gap: .5rem;
+    align-items: center;
+    &__button {
+        width: 100%;
+    }
+}
