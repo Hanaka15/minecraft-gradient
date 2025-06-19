@@ -26,10 +26,7 @@ function addColorInputToContainer(colorValue) {
 function updateOutputAndResize() {
   const text = textInput.val();
   const colors = getColors();
-  const colorOutput = colors.length > 0 ? applyColorsToText(text, colors) : {
-    html: text,
-    text: text
-  };
+  const colorOutput = applyColorsToText(text, colors);
   output.html(colorOutput.html);
   textAreaOutput.text(colorOutput.text);
   autoResizeDiv();
@@ -50,6 +47,11 @@ function getColors() {
 }
 
 function applyColorsToText(text, colors) {
+  // If no colors provided, use default gradient colors
+  if (colors.length === 0) {
+    colors = ['#00ffff', '#ff69b4']; // Default aqua to hot pink gradient
+  }
+  
   const nonSpaceLength = text.replace(/\s/g, '').length;
   const colorScale = chroma.scale(colors).mode('lch').colors(nonSpaceLength);
   let htmlOutput = '';
@@ -61,6 +63,9 @@ function applyColorsToText(text, colors) {
   const isItalic = $('#italicCheck').is(':checked');
   const isUnderline = $('#underlineCheck').is(':checked');
   const isStrike = $('#strikeCheck').is(':checked');
+  
+  // Check if any formatting is selected
+  const hasFormatting = isBold || isItalic || isUnderline || isStrike;
   
   // Build formatting codes (only one will be true)
   let formatCodes = '';
@@ -85,7 +90,12 @@ function applyColorsToText(text, colors) {
     // Generate Minecraft gradient format with formatting
     if (!isSpace) {
       const hexColor = currentColor.replace('#', '');
-      textOutput += `&#${hexColor}${formatCodes}${char}`;
+      if (hasFormatting) {
+        textOutput += `&#${hexColor}${formatCodes}${char}`;
+      } else {
+        // Just gradient colors with & when no formatting is selected
+        textOutput += `&#${hexColor}&${char}`;
+      }
     } else {
       textOutput += char;
     }
