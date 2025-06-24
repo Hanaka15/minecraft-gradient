@@ -31,8 +31,13 @@
         <div class="row">
           <div class="col-12">
             <div class="form-group mt-4">
-              <input type="text" class="form-control" id="textInput" placeholder="Enter your Minecraft nickname"
-                aria-describedby="textInputHelp" />
+              <div class="input-group">
+                <input type="text" class="form-control" id="textInput" placeholder="Enter your Minecraft nickname"
+                  aria-describedby="textInputHelp" />
+                <button class="btn btn-outline-secondary" type="button" id="symbolsButton" data-bs-toggle="modal" data-bs-target="#symbolsModal">
+                  <i class="fas fa-star"></i> Symbols
+                </button>
+              </div>
               <small id="textInputHelp">Input your Minecraft nickname for gradient generation.</small>
             </div>
           </div>
@@ -114,6 +119,28 @@
       </section>
     </div>
   </div>
+
+  <!-- Symbols Modal -->
+  <div class="modal fade" id="symbolsModal" tabindex="-1" aria-labelledby="symbolsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="symbolsModalLabel">Cool Symbols</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="text-muted mb-3">Click on any symbol to insert it at your cursor position:</p>
+          <div id="symbolsContainer" class="symbols-grid">
+            <!-- Symbols will be added here by JavaScript -->
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <footer class="footer">
     <hr />
     <div class="container mb-3">
